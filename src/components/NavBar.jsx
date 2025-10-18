@@ -1,15 +1,15 @@
 import {navLinks} from "../constants";
-export const NavBar = () => {
+const NavBar = () => {
 	return (
 		<header>
 			<nav>
 				<img  src="/logo.svg" alt="Apple logo" />
 				<ul>
 					{
-						navLinks.map((links, index)=>{
-							return (<li key={index}>
-								<a href={links.label}>
-									{links.label}
+						navLinks.map((link) => {
+							return (<li key={link.label}>
+								<a href={`#${link.label.toLowerCase()}`}>
+									{link.label}
 								</a>
 							</li>)
 						})
@@ -27,3 +27,5 @@ export const NavBar = () => {
 		</header>
 	)
 }
+
+export default NavBar;
