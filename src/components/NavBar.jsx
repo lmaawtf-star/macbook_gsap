@@ -16,10 +16,10 @@ const NavBar = () => {
 					}
 				</ul>
 				<div className="flex-center gap-3">
-					<button>
+					<button type="button" aria-label="Search">
 						<img src="/search.svg" alt="search icon"/>
 					</button>
-					<button>
+					<button type="button" aria-label="Cart">
 						<img src="/cart.svg" alt="cart icon"/>
 					</button>
 				</div>
