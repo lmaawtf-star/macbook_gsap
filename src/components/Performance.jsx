@@ -4,8 +4,16 @@ import { gsap } from "gsap";
 import { performanceImages, performanceImgPositions } from "../constants/index.js";
 import {useMediaQuery} from "react-responsive";
 
+const projectImages = [
+    { id: "p1", src: "/projects/eibsee.webp" },
+    { id: "p2", src: "/projects/flachau.webp" },
+    { id: "p3", src: "/projects/wirthshof.webp" },
+    { id: "p4", src: "/projects/lumbergerhof.webp" },
+    { id: "p5", src: "/projects/kaiserhof.webp" },
+];
+
 const Performance = () => {
-    const isMobile = useMediaQuery({ query: "(max-width: 1024px)" });
+    const isMobile = useMediaQuery({ query: "(max-width: 960px)" });
     const sectionRef = useRef(null);
 
     useGSAP(
@@ -67,6 +75,15 @@ const Performance = () => {
     return (
         <section id="performance" ref={sectionRef}>
             <h2>Next-level graphics performance. Game on.</h2>
+            <div className="meinWrapper">{
+                projectImages.map((item, index) => (
+                    <img
+                        key={index}
+                        src={item.src}
+                        className={item.id}
+                        alt={item.alt || `Performance Image #${index + 1}`}/>
+                ))
+            }</div>
 
              <div className="wrapper">
                 {performanceImages.map((item, index) => (
